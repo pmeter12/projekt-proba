@@ -35,7 +35,7 @@ Za projektnu temu odabrao sam recenziranje mjesta po Europi. Kartu ćemo dobiti 
 1. Frontend
 2. Backend
 3. Baza
-4. 
+4. Mapbox API
 ## Popis funkcionalnosti
 1. Registracija korisnika
 2. Login korisnika
