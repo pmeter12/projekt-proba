@@ -15,3 +15,9 @@ Pocetak | Kraj
 14:15   | 15:15
 ### Kratki opis promjena
 Održano predavanje o projektu
+
+
+## 19.3.2022.
+Pocetak | Kraj
+------- | ----
+11:26   | 
