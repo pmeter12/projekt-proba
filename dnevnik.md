@@ -20,4 +20,5 @@ Održano predavanje o projektu
 ## 19.3.2022.
 Pocetak | Kraj
 ------- | ----
-11:26   | 
+11:26   | 12:44
+Inicijaliziranje backenda i frontenda 
