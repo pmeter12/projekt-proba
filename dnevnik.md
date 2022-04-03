@@ -22,3 +22,8 @@ Pocetak | Kraj
 ------- | ----
 11:26   | 12:44
 Inicijaliziranje backenda i frontenda 
+
+## 3.4.2.2022.
+Pocetak | Kraj
+------- | ----
+13:37   | 
