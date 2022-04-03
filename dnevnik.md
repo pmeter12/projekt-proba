@@ -26,4 +26,5 @@ Inicijaliziranje backenda i frontenda
 ## 3.4.2.2022.
 Pocetak | Kraj
 ------- | ----
-13:37   | 
+13:37   | 14:35
+Kreiranje MongoDB baze podataka, te kreiranje modela na backend dijelu.
