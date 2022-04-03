@@ -7,10 +7,17 @@ const helmet = require('helmet');
 const mongoose = require('mongoose');
 
 require('dotenv').config();
+
 //inicijaliziranje app
+const middlewares = require("./middlewares");
 const app=express();
 
-const port = process.env.PORT || 4000;
+const DATABASE_CONNECTION = process.env.DATABASE_URL;
+
+mongoose.connect(DATABASE_CONNECTION, {
+    useNewUrlParser: true,
+    newUnifiedTopology: true,
+});
 
 app.use(morgan('common'));
 app.use(helmet());
@@ -24,4 +31,12 @@ app.get('/', (req,res) => {
     res.json({
         poruka: "Hello there",
     });
+});
+
+app.use(middlewares.nijePronaden);
+app.use(middlewares.errorHandler);
+
+const port = process.env.PORT || 4000;
+app.listen(port, () => {
+    console.log(`Spojeni na http://localhost:${port}`);
 });
