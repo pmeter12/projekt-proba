@@ -29,7 +29,7 @@ Pocetak | Kraj
 13:37   | 14:35
 Kreiranje MongoDB baze podataka, te kreiranje modela na backend dijelu.
 
-## 3.4.2.2022.
+## 19.4.2.2022.
 Pocetak | Kraj
 ------- | ----
 21:26   | 23:01
