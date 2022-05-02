@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node index.js",
     "dev": "nodemon src/index.js",
     "lint": "eslint src/"
   },
@@ -19,7 +19,9 @@
     "helmet": "^5.0.2",
     "mongoose": "^6.3.1",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.16",
     "rate-limit-mongo": "^2.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }

@@ -16,3 +16,9 @@ Pocetak | Kraj
 ### Kratki opis promjena
 Održano predavanje o projektu
 
+## 2.5.2022.
+Pocetak | Kraj
+------- | ----
+16:34   | 17:16 
+### Kratki opis promjena
+Početak rada na backend dijelu
