@@ -36,3 +36,8 @@ Pocetak | Kraj
 
 Kreiranje ruta na backend dijelu te završavanje backenda.
 Rad na Mapboxu, te na Api-ju gdje smo povezali URL sa backenda.
+
+## 2.5.2022.
+Pocetak | Kraj
+------- | ----
+12:21   | 
