@@ -28,3 +28,11 @@ Pocetak | Kraj
 ------- | ----
 13:37   | 14:35
 Kreiranje MongoDB baze podataka, te kreiranje modela na backend dijelu.
+
+## 19.4.2.2022.
+Pocetak | Kraj
+------- | ----
+21:26   | 23:01
+
+Kreiranje ruta na backend dijelu te završavanje backenda.
+Rad na Mapboxu, te na Api-ju gdje smo povezali URL sa backenda.
