@@ -1,6 +1,6 @@
 # Projektne faze
 - [x] - Opis projekta
-- [x] - Početna struktura aplikacije
+- [ ] - Početna struktura aplikacije
 - [ ] - Prototip
 - [ ] - Konzultacije
 - [ ] - Finalna verzija
