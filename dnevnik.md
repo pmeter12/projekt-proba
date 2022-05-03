@@ -28,4 +28,5 @@ Pocetak | Kraj
 ------- | ----
 11:31   |  
 ### Kratki opis promjena
-Postavljanje backenda
+Postavljanje backenda te spajanje sa MongoDB bazom podataka.
+Kreiranje modela i ruta za Korisnika i za svaku Oznaku(oznaka će biti korisnikov komentar na posjećeno mjesto).
