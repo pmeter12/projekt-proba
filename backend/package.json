@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon src/index.js",
-    "lint": "eslint src/"
+    "dev": "nodemon src/index.js"
+    
   },
   "author": "",
   "license": "ISC",

@@ -22,3 +22,10 @@ Pocetak | Kraj
 16:34   | 17:16 
 ### Kratki opis promjena
 Početak rada na backend dijelu
+
+## 3.5.2022.
+Pocetak | Kraj
+------- | ----
+11:31   |  
+### Kratki opis promjena
+Postavljanje backenda
