@@ -26,6 +26,10 @@ Početak rada na backend dijelu
 ## 3.5.2022.
 Pocetak | Kraj
 ------- | ----
-11:31   |
+11:31   | 12:59
+Kreirali smo modele za Oznaku i Korisnika te smo kreirali rute i spojili se s MongoDB bazom. 
 
-
+## 4.5.2022.
+Pocetak | Kraj
+------- | ----
+13:29   | 
