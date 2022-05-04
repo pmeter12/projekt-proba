@@ -27,7 +27,7 @@ const OznakaSchema = new mongoose.Schema(
             type:Number,
             require:true,
         },
-        desc: {
+        opis: {
             type:String,
             require:true,
             min:3,

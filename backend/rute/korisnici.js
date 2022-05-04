@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 //registracija
 
-router.post('/registracija',async(req,res) => {
+router.post('/register',async(req,res) => {
     try{
         //generiramo lozinku pomoću bcrypt
         const salt = await bcrypt.genSalt(10);
@@ -29,20 +29,25 @@ router.post('/registracija',async(req,res) => {
 
 //logiranje
 
-router.post('/logiranje',async(req,res) => {
+router.post('/login',async(req,res) => {
     try{
         //pronalaženje korisnika
 
         const korisnik = await Korisnik.findOne({korisnicko_ime:req.body.korisnicko_ime});
-        !korisnik && res.status(400).json("Pogrešno korisničko ime ili lozinka!");
-
+        if(!korisnik){
+            res.status(400).json("Pogrešno korisničko ime!");
+            return;
+        }
         //validacija lozinke
 
         const tocnaLozinka = await bcrypt.compare(
             req.body.lozinka,
             korisnik.lozinka
         );
-        !tocnaLozinka && res.status(400).json("Pogrešno korisničko ime ili lozinka!");
+        if(!tocnaLozinka){
+            res.status(400).json("Pogrešna lozinka!");
+            return;
+        }
         res.status(200).json({_id: korisnik._id, korisnicko_ime:korisnik.korisnicko_ime});
     }  catch(err) {
         res.status(500).json(err);

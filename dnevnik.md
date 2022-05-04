@@ -26,7 +26,14 @@ Početak rada na backend dijelu
 ## 3.5.2022.
 Pocetak | Kraj
 ------- | ----
-11:31   |  
+11:31   | 12:59 
 ### Kratki opis promjena
 Postavljanje backenda te spajanje sa MongoDB bazom podataka.
-Kreiranje modela i ruta za Korisnika i za svaku Oznaku(oznaka će biti korisnikov komentar na posjećeno mjesto).
+Kreiranje modela i ruta za Korisnika i za svaku Oznaku(oznaka će biti korisnikov 
+komentar na posjećeno mjesto).
+## 3.5.2022.
+Pocetak | Kraj
+------- | ----
+13:24   |  
+### Kratki opis promjena
+
