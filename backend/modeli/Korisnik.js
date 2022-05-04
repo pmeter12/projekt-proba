@@ -21,6 +21,7 @@ const KorisnikSchema = new mongoose.Schema(
             require: true,
             min:6
         },
+        
     },
     {timestamps: true  }
 );

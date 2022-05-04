@@ -1,6 +1,7 @@
 const router= require('express').Router();
 const Korisnik=require('../modeli/Korisnik');
 const bcrypt = require('bcrypt');
+const jsonweb = require('jsonwebtoken');
 
 //registracija
 
@@ -48,10 +49,30 @@ router.post('/login',async(req,res) => {
             res.status(400).json("Pogrešna lozinka!");
             return;
         }
-        res.status(200).json({_id: korisnik._id, korisnicko_ime:korisnik.korisnicko_ime});
+
+
+        const validniToken = jsonweb.sign(
+            {ime: korisnik.korisnicko_ime, email: korisnik.email},
+            process.env.tajni_kljuc,
+            {expiresIn:"5d"}
+        );
+        
+        
+        res.status(200).json({_id: korisnik._id, korisnicko_ime:korisnik.korisnicko_ime, validniToken});
+        
     }  catch(err) {
         res.status(500).json(err);
     } 
 });
+
+router.get('/', async(req,res) => {
+    try{
+        const korisnici = await Korisnik.find();
+        res.status(200).json(korisnici);
+
+    } catch{
+        res.status(500).json(err);
+    }
+})
 
 module.exports=router;

@@ -32,4 +32,6 @@ Kreirali smo modele za Oznaku i Korisnika te smo kreirali rute i spojili se s Mo
 ## 4.5.2022.
 Pocetak | Kraj
 ------- | ----
-13:29   | 
+13:29   | 17:14
+
+Backend dio je završen,potrebno napraviti još par testova. Frontend dio postavljen.
