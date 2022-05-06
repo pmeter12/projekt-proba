@@ -1,28 +1,21 @@
 import * as React from 'react';
-import {useState} from 'react';
-import ReactMapGL from 'react-map-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import {MapContainer,TileLayer,Marker,Popup} from 'react-leaflet';
+import './App.css';
 
 function App() {
-  const[viewPort,setViewport] = useState({
-    width:"100vw",
-    height:"100vh",
-    latitude:46,
-    longitude:17,
-    zoom: 4
-
-  });
   
   return (
-    <div className="App">
-      <ReactMapGL
-      {...viewPort}
-      mapboxAccessToken={process.env.REACT_APP_MAPBOX}
-      mapStyle="mapbox://styles/pecka1603/cl26m394m000c16nx0xn9mkn4"
-      onViewportChange={nextViewport => setViewport(nextViewport)}
+    <MapContainer center={[45.48, 15.58]} zoom ={7} scrollWheelZoom={true}>
+      <TileLayer
+        attribution='&copy; <ahref="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-   </div> 
-      
+      <Marker position={[45.48, 15.58]}>
+        <Popup>
+          Grad sa četiri rijeke. <br/>
+        </Popup>
+      </Marker>
+    </MapContainer> 
   );
 }
 
