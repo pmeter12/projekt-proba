@@ -39,5 +39,6 @@ Backend dio je završen,potrebno napraviti još par testova. Frontend dio postav
 ## 6.5.2022.
 Pocetak | Kraj
 ------- | ----
-12:15   | 
+12:15   | 16:54
+Postavljena mapa i prikazane iskomentirane oznake koje su unesene preko Postmana.
 

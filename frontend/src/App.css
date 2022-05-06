@@ -2,3 +2,26 @@
     height: 100vh;
     width:100vw;
 }
+
+.kartica{
+    width:230px;
+    height:230px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+label{
+    width:max-content;
+    color:blueviolet;
+    font-size:  12px;
+    border-bottom: .5px solid blueviolet;
+    margin:3 px;
+}
+
+.opis{
+    font-size:13px;
+}
+
+.zvijezdica{
+    color:gold;
+}
