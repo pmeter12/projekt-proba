@@ -35,3 +35,9 @@ Pocetak | Kraj
 13:29   | 17:14
 
 Backend dio je završen,potrebno napraviti još par testova. Frontend dio postavljen.
+
+## 6.5.2022.
+Pocetak | Kraj
+------- | ----
+12:15   | 
+
