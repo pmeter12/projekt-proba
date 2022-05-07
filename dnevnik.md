@@ -45,5 +45,6 @@ Postavljena mapa i prikazane iskomentirane oznake koje su unesene preko Postmana
 ## 7.5.2022.
 Pocetak | Kraj
 ------- | ----
-13:00   | 
+13:00   | 13:50
+Rad na metodama u frontend dijelu.
 
