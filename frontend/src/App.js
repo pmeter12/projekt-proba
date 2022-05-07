@@ -7,10 +7,15 @@ import axios from 'axios';
 
 function App() {
 
-  
+  const trenutniKorisnik="petar";
   const[oznake,setoznake] = useState([])
   const [trenutnoMjestoId,setTrenutnoMjestoId] = useState(null);
-  const[novoMjesto,setNovoMjesto] = useState();
+  const[novoMjesto,setNovoMjesto]=useState(null);
+  const[naslov,setNaslov]=useState(null);
+  const[opis,setOpis]=useState(null);
+  const[ocjena,setOcjena]=useState(0);
+
+
   useEffect(()=>{
     const getOznake = async() => {
       try{
@@ -29,13 +34,32 @@ function App() {
   }
 
   
-  const handleNoviKlik = (lat,lng) =>{
-    const a=[lat,lng]
+  const handleNoviKlik = (lati,long) =>{
+    const [lat,lng]=[lati,long]
     setNovoMjesto({
-      lat:a[0],
-      long:a[1]
-  })
+      lat,
+      lng,
+    })
 
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    const novaOznaka={
+      korisnicko_ime:trenutniKorisnik,
+      naslov,
+      opis,
+      ocjena,
+      lat:novoMjesto.lat,
+      long:novoMjesto.long,
+    }
+
+    try{
+      const res=await axios.post("/oznake",novaOznaka);
+      setoznake([...oznake,res.data]);
+      setNovoMjesto(null);
+    }catch(err){
+      console.log(err);
+    }
+  }
     
   }
   return (
@@ -46,7 +70,7 @@ function App() {
       zoom ={5} 
       scrollWheelZoom={true}
       whenReady={(map) =>{
-        map.target.on('dblclick',function(e){
+        map.target.on('click',function(e){
           handleNoviKlik(e.latlng.lat,e.latlng.lng);
         })
         
@@ -101,27 +125,36 @@ function App() {
       </>
       ))}
       {novoMjesto && (
-         <Popup
-            latitude={novoMjesto.lat}
-            longitude={novoMjesto.long}
-            closeButton={true}
-            closeOnClick={false}
-            anchor="left"
-            onClose={() => setNovoMjesto(null)}
-          >Pozdrav</Popup>
+          <Popup
+             latitude={novoMjesto.lat}
+             longitude={novoMjesto.long}
+             closeButton={true}
+             closeOnClick={false}
+             anchor="left"
+             onClose={() => setNovoMjesto(null)}
+           >
+             <div>
+              <form onSubmit={handleSubmit}>
+              <label>Naslov</label>
+              <input placeholder="Upišite naslov" onChange={(e)=> setNaslov(e.target.value)}/>
+              <label>Opis</label>
+              <textarea placeholder="Recite nam nešto o ovom mjestu." onChange={(e)=> setOpis(e.target.value)}/>  
+              <label>Ocjena</label>
+              <select onChange={(e)=> setOcjena(e.target.value)}>
+                <option value="1">1</option>
+                <option value="1">2</option>
+                <option value="1">3</option>
+                <option value="1">4</option>
+                <option value="1">5</option>
+              </select>
+              <button className="potvrdni" type="submit">Dodaj pin</button>
+             </form>
+         </div>
+         </Popup>
+      
       )}
-        <div>
-          <form>
-          <label>Naslov</label>
-          <input placeholder="Upišite naslov"/>
-          <label>Opis</label>
-          <textarea placeholder="Recite nam nešto o ovom mjestu."/>  
-          <label>Ocjena</label>
-          <button className="potvrdni" type="submit">Dodaj pin</button>
-            
-          </form>
-        </div>
-
+         
+        
       
 
       
