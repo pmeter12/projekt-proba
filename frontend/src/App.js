@@ -7,13 +7,11 @@ import axios from 'axios';
 
 function App() {
 
-  const trenutniKorisnik="petar";
+  
   const[oznake,setoznake] = useState([])
   const [trenutnoMjestoId,setTrenutnoMjestoId] = useState(null);
   const[novoMjesto,setNovoMjesto]=useState(null);
-  const[naslov,setNaslov]=useState(null);
-  const[opis,setOpis]=useState(null);
-  const[ocjena,setOcjena]=useState(0);
+  
 
 
   useEffect(()=>{
@@ -30,7 +28,7 @@ function App() {
 
   const handleMarkerClick = (id) => {
     setTrenutnoMjestoId(id)
-    console.log(trenutnoMjestoId);
+    //console.log(trenutnoMjestoId);
   }
 
   
@@ -40,27 +38,6 @@ function App() {
       lat,
       lng,
     })
-
-  const handleSubmit = async (e) =>{
-    e.preventDefault();
-    const novaOznaka={
-      korisnicko_ime:trenutniKorisnik,
-      naslov,
-      opis,
-      ocjena,
-      lat:novoMjesto.lat,
-      long:novoMjesto.long,
-    }
-
-    try{
-      const res=await axios.post("/oznake",novaOznaka);
-      setoznake([...oznake,res.data]);
-      setNovoMjesto(null);
-    }catch(err){
-      console.log(err);
-    }
-  }
-    
   }
   return (
     <div className="app">
@@ -124,7 +101,7 @@ function App() {
         )}
       </>
       ))}
-      {novoMjesto && (
+      {novoMjesto !== null && (
           <Popup
              latitude={novoMjesto.lat}
              longitude={novoMjesto.long}
@@ -133,31 +110,8 @@ function App() {
              anchor="left"
              onClose={() => setNovoMjesto(null)}
            >
-             <div>
-              <form onSubmit={handleSubmit}>
-              <label>Naslov</label>
-              <input placeholder="Upišite naslov" onChange={(e)=> setNaslov(e.target.value)}/>
-              <label>Opis</label>
-              <textarea placeholder="Recite nam nešto o ovom mjestu." onChange={(e)=> setOpis(e.target.value)}/>  
-              <label>Ocjena</label>
-              <select onChange={(e)=> setOcjena(e.target.value)}>
-                <option value="1">1</option>
-                <option value="1">2</option>
-                <option value="1">3</option>
-                <option value="1">4</option>
-                <option value="1">5</option>
-              </select>
-              <button className="potvrdni" type="submit">Dodaj pin</button>
-             </form>
-         </div>
          </Popup>
-      
       )}
-         
-        
-      
-
-      
       </MapContainer> 
     </div>
   );
